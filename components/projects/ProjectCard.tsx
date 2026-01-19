@@ -2,6 +2,7 @@
 
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { VolumeX } from "lucide-react"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Project, categoryLabels } from "@/lib/projects"
@@ -33,14 +34,21 @@ export function ProjectCard({ project, onClick }: ProjectCardProps) {
       >
         <div className="relative aspect-video overflow-hidden bg-muted">
           {mediaIsVideo ? (
-            <video
-              src={project.image}
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-contain bg-black transition-transform duration-300 group-hover:scale-105"
-            />
+            <>
+              <video
+                src={project.image}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className="absolute inset-0 w-full h-full object-contain bg-black transition-transform duration-300 group-hover:scale-105"
+              />
+              {/* Indicateur vidéo muette */}
+              <div className="absolute top-2 right-2 flex items-center gap-1 bg-black/70 text-white text-xs px-2 py-1 rounded-md z-10">
+                <VolumeX className="w-3 h-3" />
+                <span>Muet</span>
+              </div>
+            </>
           ) : (
             <Image
               src={project.image}

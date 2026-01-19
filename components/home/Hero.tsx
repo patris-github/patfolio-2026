@@ -21,7 +21,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
+            <span className="inline-flex items-center gap-2 rounded-full bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary badge-breathe">
               <Sparkles className="h-4 w-4" />
               Creative Solution Designer
             </span>
@@ -34,7 +34,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="mt-6 text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl"
           >
-            Marre de jongler entre le graphiste, le dev et le consultant ?
+            Marre de jongler entre le graphiste, le dev et le chef de projet ?
           </motion.h1>
 
           {/* Subheadline */}

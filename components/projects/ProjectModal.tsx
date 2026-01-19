@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { ExternalLink, X, CheckCircle2 } from "lucide-react"
+import { ExternalLink, X, CheckCircle2, VolumeX } from "lucide-react"
 import {
   Dialog,
   DialogContent,
@@ -52,15 +52,22 @@ export function ProjectModal({ project, open, onOpenChange }: ProjectModalProps)
           ) : (
             <div className="relative aspect-video rounded-lg overflow-hidden bg-muted">
               {mediaIsVideo ? (
-                <video
-                  src={project.image}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  controls
-                  className="absolute inset-0 w-full h-full object-contain bg-black"
-                />
+                <>
+                  <video
+                    src={project.image}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    controls
+                    className="absolute inset-0 w-full h-full object-contain bg-black"
+                  />
+                  {/* Indicateur vidéo muette */}
+                  <div className="absolute top-3 right-3 flex items-center gap-1.5 bg-black/70 text-white text-sm px-2.5 py-1.5 rounded-md z-10">
+                    <VolumeX className="w-4 h-4" />
+                    <span>Vidéo sans son</span>
+                  </div>
+                </>
               ) : (
                 <Image
                   src={project.image}

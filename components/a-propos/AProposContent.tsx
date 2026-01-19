@@ -1,6 +1,16 @@
 "use client"
 
+import { useState } from "react"
+import Image from "next/image"
 import { motion } from "framer-motion"
+import { Download, X, ZoomIn } from "lucide-react"
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog"
+import { Button } from "@/components/ui/button"
 
 const fadeInUp = {
   initial: { opacity: 0, y: 20 },
@@ -10,6 +20,8 @@ const fadeInUp = {
 }
 
 export function AProposContent() {
+  const [cvModalOpen, setCvModalOpen] = useState(false)
+
   return (
     <div className="container mx-auto px-4 py-16 md:py-24">
       <div className="mx-auto max-w-3xl">
@@ -66,6 +78,74 @@ export function AProposContent() {
             développement, automatisations — le tout en un seul interlocuteur.
           </p>
         </motion.div>
+
+        {/* CV Section */}
+        <motion.div
+          {...fadeInUp}
+          transition={{ duration: 0.5, delay: 0.35 }}
+          className="mb-12"
+        >
+          <h2 className="text-xl font-semibold mb-4">Mon CV</h2>
+          <button
+            onClick={() => setCvModalOpen(true)}
+            className="group flex flex-col sm:flex-row items-center gap-4 sm:gap-6 bg-card border rounded-lg p-6 hover:border-primary/50 hover:shadow-md transition-all duration-300 w-full text-left"
+          >
+            {/* Miniature CV */}
+            <div className="relative flex-shrink-0 w-28 h-40 sm:w-32 sm:h-44 rounded-md overflow-hidden border-2 border-muted-foreground/20 group-hover:border-primary/50 group-hover:scale-105 transition-all duration-300 shadow-sm">
+              <Image
+                src="/cv-thumbnail.png"
+                alt="Aperçu du CV de Patrice Monat"
+                fill
+                className="object-cover object-top"
+                sizes="128px"
+              />
+              {/* Overlay zoom icon */}
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                <ZoomIn className="w-6 h-6 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+              </div>
+            </div>
+            {/* Texte */}
+            <div className="flex-1 text-center sm:text-left">
+              <h3 className="font-semibold text-lg group-hover:text-primary transition-colors">
+                CV Patrice Monat
+              </h3>
+              <p className="text-sm text-muted-foreground mt-1">
+                Parcours, compétences et expériences détaillées
+              </p>
+              <div className="inline-flex items-center gap-2 mt-3 text-sm font-medium text-primary">
+                <ZoomIn className="w-4 h-4" />
+                Consulter le CV
+              </div>
+            </div>
+          </button>
+        </motion.div>
+
+        {/* CV Modal */}
+        <Dialog open={cvModalOpen} onOpenChange={setCvModalOpen}>
+          <DialogContent className="max-w-4xl max-h-[95vh] overflow-y-auto">
+            <DialogHeader>
+              <DialogTitle>CV Patrice Monat</DialogTitle>
+            </DialogHeader>
+            <div className="relative w-full aspect-[210/297] my-4">
+              <Image
+                src="/cv-thumbnail.png"
+                alt="CV de Patrice Monat"
+                fill
+                className="object-contain"
+                sizes="(max-width: 896px) 100vw, 896px"
+                priority
+              />
+            </div>
+            <div className="flex justify-center">
+              <Button asChild>
+                <a href="/cv-patrice-monat.pdf" download>
+                  <Download className="w-4 h-4 mr-2" />
+                  Télécharger le CV (PDF)
+                </a>
+              </Button>
+            </div>
+          </DialogContent>
+        </Dialog>
 
         {/* Compétences clés */}
         <motion.div

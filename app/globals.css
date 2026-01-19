@@ -108,3 +108,20 @@ html {
   );
   background-size: 400% 400%;
 }
+
+/* Breathing animation for badge */
+@keyframes breathe {
+  0%, 100% {
+    box-shadow: 0 0 0 0 hsl(var(--primary) / 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px 8px hsl(var(--primary) / 0.4);
+    transform: scale(1.05);
+  }
+}
+
+.badge-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+

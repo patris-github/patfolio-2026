@@ -1,0 +1,22 @@
+# BMM Workflow Status
+# Tracks completion of BMAD workflows for project: Patfolio 2026
+
+project_name: Patfolio 2026
+last_updated: 2026-01-15
+
+# Completed Workflows
+workflows:
+  product-brief:
+    status: complete
+    completed_date: 2026-01-15
+    output_file: "_bmad-output/planning-artifacts/product-brief-Patfolio-2026-2026-01-15.md"
+    notes: "Product Brief completed with Creative Solution Designer positioning, Framer stack, and 30-day CDI objective"
+
+# Next Recommended Workflows
+next_steps:
+  - workflow: create-prd
+    priority: high
+    reason: "Détailler les exigences techniques et fonctionnelles pour le MVP"
+  - workflow: create-ux-design
+    priority: medium
+    reason: "Définir l'expérience utilisateur et les wireframes Framer"

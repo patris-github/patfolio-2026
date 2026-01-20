@@ -114,6 +114,7 @@ export const projects: Project[] = [
       { src: "/projects/print-02-gite-guizay.png", title: "Flyer Gîte de Guizay" },
       { src: "/projects/print-03-flyer-rencontres-ludik.png", title: "Flyer Rencontres Ludik Bourgoin-Jallieu" },
       { src: "/projects/print-04-flyer-muravin.png", title: "Flyer Muravin" },
+      { src: "/projects/print-11-flyer-chemins-nuances.jpg", title: "Flyer Ô Chemins des Nuances" },
       { src: "/projects/print-05-affiche-rencontres-ludik.jpg", title: "Affiche Rencontres Ludik" },
       { src: "/projects/print-06-affiche-pitt-poule.jpg", title: "Affiche Type Pitt Poule" },
       { src: "/projects/print-07-affiche-elzed.jpg", title: "Affiche Concert Elzed" },

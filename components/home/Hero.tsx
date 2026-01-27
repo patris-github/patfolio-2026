@@ -50,10 +50,6 @@ const stats = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 -z-10 animated-gradient animate-gradient-shift" />
-      {/* Overlay for better text readability */}
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-transparent via-transparent to-background" />
 
       <div className="container mx-auto px-4 py-24 md:py-32 lg:py-40">
         <div className="mx-auto max-w-3xl text-center">

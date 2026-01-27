@@ -5,6 +5,7 @@ import "./globals.css"
 import { Header } from "@/components/layout/Header"
 import { Footer } from "@/components/layout/Footer"
 import { ThemeProvider } from "@/components/providers/ThemeProvider"
+import { FloatingShapes } from "@/components/ui/FloatingShapes"
 
 export const metadata: Metadata = {
   title: {
@@ -60,8 +61,9 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
+          <FloatingShapes />
           <Header />
-          <main className="flex-1">{children}</main>
+          <main className="flex-1 relative z-10">{children}</main>
           <Footer />
         </ThemeProvider>
       </body>
